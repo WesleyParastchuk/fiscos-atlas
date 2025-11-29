@@ -1,5 +1,5 @@
 # Estagio 1: Build (Compilacao)
-FROM maven:3.9.6-eclipse-temurin-17 AS build
+FROM maven:3.9.6-eclipse-temurin-21 AS build
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
@@ -7,7 +7,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Estagio 2: Runtime (Execução)
-FROM eclipse-temurin:17-jdk-alpine
+FROM eclipse-temurin:21-jdk-alpine
 WORKDIR /app
 # Copia apenas o .jar gerado no estagio anterior
 COPY --from=build /app/target/*.jar app.jar
