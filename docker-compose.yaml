@@ -1,0 +1,18 @@
+services:
+  app:
+    # Constrói a imagem usando o Dockerfile da pasta atual
+    build: .
+
+    # Nome amigável para gerenciar o container
+    container_name: atlas-backend
+
+    # Mapeia a porta 8080 do container para a 8080 do seu computador/servidor
+    ports:
+      - "8080:8080"
+
+    # Lê as variáveis de ambiente do arquivo .env
+    env_file:
+      - .env
+
+    # Se a aplicação cair, o Docker tenta subir ela de novo automaticamente
+    restart: always

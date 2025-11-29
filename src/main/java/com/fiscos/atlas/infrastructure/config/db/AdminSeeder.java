@@ -36,6 +36,6 @@ public class AdminSeeder implements CommandLineRunner {
 
         userRepository.save(admin);
         
-        System.out.println(">>> Seeder: Admin criado com sucesso! (admin@fiscos.com / admin123)");
+        System.out.println(">>> Seeder: Admin criado com sucesso! (admin@fiscos.com / Admin123)");
     }
 }
